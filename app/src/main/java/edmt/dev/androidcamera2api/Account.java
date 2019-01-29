@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 public class Account extends Activity {
 
+    //denny test upload pke admin
     TextView name,email;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
