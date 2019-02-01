@@ -50,7 +50,6 @@ public class DoseDetail extends AppCompatActivity {
             obat = ReaderActivity.name.toString();
             data = ReaderETicketActivity.datatotal.toString();
         }
-
         //Toast.makeText(DoseDetail.this,data,Toast.LENGTH_SHORT).show();
         new medno(data).execute();
         new allergies(data).execute();

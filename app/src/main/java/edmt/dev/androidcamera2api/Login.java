@@ -72,30 +72,20 @@ public class Login extends Activity {
         rellay2 = (RelativeLayout) findViewById(R.id.rellay2);
 
         handler.postDelayed(runnable, 4000);
-
-
     }
-
     class loginapp extends AsyncTask<String, String, String>
     {
         private String username, password;
-
         public loginapp(String username, String password) {
             this.username = username;
             this.password = password;
         }
-
         @Override
         protected String doInBackground(String... strings) {
-
-
             CallSoap cs = new CallSoap();
-
             String data = cs.LoginApps(username,password);
-
             return data;
         }
-
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
