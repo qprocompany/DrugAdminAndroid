@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 public class Account extends Activity {
 
-    //denny test upload pke admin
+    //denny test upload pke admin tgl 2
     TextView name,email;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,6 @@ public class Account extends Activity {
             String data = cs.Account(username);
             return data;
         }
-
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
