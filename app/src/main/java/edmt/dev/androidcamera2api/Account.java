@@ -27,7 +27,6 @@ public class Account extends Activity {
         email = (TextView) findViewById(R.id.email);
         new account(Login.username1).execute();
     }
-
     class account extends AsyncTask<String, String, String>
     {
         private String username, password;

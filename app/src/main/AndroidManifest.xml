@@ -21,16 +21,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Account" android:screenOrientation="portrait"/>
-        <activity android:name=".MainActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".LupaPassword" android:screenOrientation="portrait"/>
-        <activity android:name=".ReaderActivity" android:screenOrientation="portrait"/>
-        <activity android:name=".RegisterApp" android:screenOrientation="portrait"/>
-        <activity android:name=".Menu" android:screenOrientation="portrait"/>
-        <activity android:name=".ReaderETicketActivity" android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Account"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LupaPassword"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ReaderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RegisterApp"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Menu"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ReaderETicketActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".DoseDetail"
-            android:label="@string/title_activity_dose_detail" android:screenOrientation="portrait"/>
+            android:label="@string/title_activity_dose_detail"
+            android:screenOrientation="portrait" />
+        <activity android:name=".maintenance" />
+        <activity android:name=".maintenceinfo"></activity>
     </application>
 
 </manifest>
