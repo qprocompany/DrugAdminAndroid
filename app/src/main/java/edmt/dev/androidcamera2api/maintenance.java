@@ -14,7 +14,7 @@ import com.google.zxing.integration.android.IntentResult;
 import com.shashank.sony.fancytoastlib.FancyToast;
 
 public class maintenance extends AppCompatActivity {
-    public static String name;
+    public static String bedid;
     Button nextbtn;
     ImageButton scanbtn1;
 
@@ -62,7 +62,7 @@ public class maintenance extends AppCompatActivity {
                 FancyToast.makeText(this,"You cancelled the scanning",FancyToast.LENGTH_LONG,FancyToast.WARNING,true).show();
             }
             else {
-                name = result.getContents();
+                bedid = result.getContents();
                 //FancyToast.makeText(this, name,FancyToast.LENGTH_LONG,FancyToast.INFO,true).show();
             }
         }
