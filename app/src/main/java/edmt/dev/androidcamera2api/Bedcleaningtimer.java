@@ -53,7 +53,7 @@ public class Bedcleaningtimer extends AppCompatActivity {
 
     }
 
-    //test
+
 
     public void pauseChronometer(View v) {
         if (running) {
