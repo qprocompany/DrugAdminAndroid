@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 
 public class Menu extends AppCompatActivity {
 
-    LinearLayout linearaccount, linearqrcode,linearphoto;
+    LinearLayout linearaccount, linearqrcode,linearphoto,linearbed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,7 @@ public class Menu extends AppCompatActivity {
         linearaccount = (LinearLayout) findViewById(R.id.linearaccount);
         linearqrcode = (LinearLayout) findViewById(R.id.linearqrcode);
         linearphoto = (LinearLayout) findViewById(R.id.linearphoto);
+        linearbed = (LinearLayout) findViewById(R.id.linearbed);
 
         linearaccount.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,6 +48,14 @@ public class Menu extends AppCompatActivity {
             }
         });
 
+        linearbed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Menu.this, Bedcleaning.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(intent);
+            }
+        });
 
 
 
