@@ -50,8 +50,6 @@ public class maintenance extends AppCompatActivity {
                 integrator.initiateScan();
             }
         });
-
-
     }
 
     @Override
