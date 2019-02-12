@@ -55,15 +55,14 @@ public class CallSoap {
 
     public  final String OPERATION_NAME_RegistrationApps = "RegisterDrugAdminApps";
 
-    public String RegistrationApps(String username,String password, String parid, String sex, String dob)
+    public String RegistrationApps(String username,String password, String name, String div)
     {
         SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE,OPERATION_NAME_RegistrationApps);
 
         request.addProperty("username",username);
         request.addProperty("password",password);
-        request.addProperty("parid",parid);
-        request.addProperty("sex",sex);
-        request.addProperty("dob",dob);
+        request.addProperty("name",name);
+        request.addProperty("Division",div);
 
         SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
                 SoapEnvelope.VER11);

@@ -18,8 +18,7 @@ import android.widget.Toast;
 
 public class RegisterApp extends Activity {
 
-    EditText name,password,parid,tgl,bln,thn;
-    RadioButton pria,wanita;
+    EditText name,password, Name,div;
     Button submit;
 
     @Override
@@ -32,52 +31,39 @@ public class RegisterApp extends Activity {
         StrictMode.setThreadPolicy(policy);
         name = (EditText) findViewById(R.id.email);
         password = (EditText) findViewById(R.id.password);
-        parid = (EditText) findViewById(R.id.parid);
-        pria = (RadioButton) findViewById(R.id.male);
-        wanita = (RadioButton) findViewById(R.id.female);
-        tgl = (EditText) findViewById(R.id.tanggal);
-        bln = (EditText) findViewById(R.id.bulan);
-        thn = (EditText) findViewById(R.id.tahun);
+        Name = (EditText) findViewById(R.id.name);
+        div = findViewById(R.id.div);
         submit = (Button) findViewById(R.id.submit);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String date = tgl.getText().toString()+"/"+bln.getText().toString()+"/"+thn.getText().toString();
-                String sex = "";
-                if(pria.isChecked()==true)
-                    sex = "Pria";
-                else if(wanita.isChecked() == true)
-                    sex = "Wanita";
-                //Toast.makeText(RegisterApp.this,sex,Toast.LENGTH_SHORT).show();
-                new registerapps(name.getText().toString(),password.getText().toString(),parid.getText().toString(),sex,date).execute();
+                new registerapps(name.getText().toString(),password.getText().toString(),name.getText().toString(),div.getText().toString()).execute();
             }
         });
     }
 
     class registerapps extends AsyncTask<String, String, String>
     {
-        private String username, password,parid,sex,dob;
+        private String username, password,name, div;
 
-        public registerapps(String username, String password,String parid,String sex,String dob) {
+        public registerapps(String username, String password,String name,String div) {
             this.username = username;
             this.password = password;
-            this.parid = parid;
-            this.sex = sex;
-            this.dob = dob;
+            this.name = name;
+            this.div = div;
         }
 
         @Override
         protected String doInBackground(String... strings) {
 
             CallSoap cs = new CallSoap();
-            String data = cs.RegistrationApps(username,password,parid,sex,dob);
+            String data = cs.RegistrationApps(username,password,name,div);
             return data;
         }
 
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            //Toast.makeText(RegisterApp.this,s,Toast.LENGTH_SHORT).show();
             OpenMainActivity();
         }
     }
