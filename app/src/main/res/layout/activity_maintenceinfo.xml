@@ -27,24 +27,23 @@
         <LinearLayout
             android:id="@+id/linearphoto"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="449dp"
             android:layout_margin="2dp"
             android:layout_weight="1"
             android:background="@drawable/btn_chngcolor_tempattidur"
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/textview_border"
-                android:src="@drawable/camera"
-                />
+                android:src="@drawable/camera" />
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="34dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/textview_border"
                 android:gravity="center"
