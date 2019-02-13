@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:onClick="pauseChronometer"
-        android:text="Pause"
+        android:text="Stop"
         tools:ignore="OnClick" />
 
     <Button
@@ -49,8 +49,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="159dp"
-        android:layout_marginBottom="196dp"
+        android:layout_marginEnd="142dp"
+        android:layout_marginBottom="194dp"
         android:text="next"
         tools:ignore="OnClick" />
 
