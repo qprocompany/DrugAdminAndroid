@@ -385,4 +385,156 @@ public class CallSoap {
         }
         return response.toString();
     }
+
+    public final String SOAP_ACTION_Start = "http://tempuri.org/StartCleaning";
+
+    public  final String OPERATION_NAME_Start = "StartCleaning";
+
+    public String StartCleaning(String username,String datetime,String bedid)
+    {
+        SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE,OPERATION_NAME_Start);
+
+        request.addProperty("username",username);
+        request.addProperty("datetime",datetime);
+        request.addProperty("Bedid",bedid);
+
+        SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
+                SoapEnvelope.VER11);
+        envelope.dotNet = true;
+        envelope.implicitTypes = true;
+        envelope.encodingStyle = SoapSerializationEnvelope.XSD;
+
+        envelope.setOutputSoapObject(request);
+
+        HttpTransportSE httpTransport = new HttpTransportSE(SOAP_ADDRESS);
+        Object response = null;
+
+
+        try
+        {
+            httpTransport.call(SOAP_ACTION_Start, envelope);
+            response = envelope.getResponse();
+            SoapPrimitive response1 = (SoapPrimitive)envelope.getResponse();
+            String data = response1.toString();
+        }
+        catch (Exception exception)
+        {
+            response=exception.toString();
+        }
+        return response.toString();
+    }
+
+    public final String SOAP_ACTION_Stop = "http://tempuri.org/StopCleaning";
+
+    public  final String OPERATION_NAME_Stop = "StopCleaning";
+
+    public String FinishCleaning(String username,String datetime,String bedid)
+    {
+        SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE,OPERATION_NAME_Stop);
+
+        request.addProperty("username",username);
+        request.addProperty("datetime",datetime);
+        request.addProperty("Bedid",bedid);
+
+        SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
+                SoapEnvelope.VER11);
+        envelope.dotNet = true;
+        envelope.implicitTypes = true;
+        envelope.encodingStyle = SoapSerializationEnvelope.XSD;
+
+        envelope.setOutputSoapObject(request);
+
+        HttpTransportSE httpTransport = new HttpTransportSE(SOAP_ADDRESS);
+        Object response = null;
+
+
+        try
+        {
+            httpTransport.call(SOAP_ACTION_Stop, envelope);
+            response = envelope.getResponse();
+            SoapPrimitive response1 = (SoapPrimitive)envelope.getResponse();
+            String data = response1.toString();
+        }
+        catch (Exception exception)
+        {
+            response=exception.toString();
+        }
+        return response.toString();
+    }
+
+    public final String SOAP_ACTION_DetailClean = "http://tempuri.org/DetailCleaning";
+
+    public  final String OPERATION_NAME_DetailClean = "DetailCleaning";
+
+    public String DetailCleaning(String username,String bedid)
+    {
+        SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE,OPERATION_NAME_DetailClean);
+
+        request.addProperty("username",username);
+        request.addProperty("Bedid",bedid);
+
+        SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
+                SoapEnvelope.VER11);
+        envelope.dotNet = true;
+        envelope.implicitTypes = true;
+        envelope.encodingStyle = SoapSerializationEnvelope.XSD;
+
+        envelope.setOutputSoapObject(request);
+
+        HttpTransportSE httpTransport = new HttpTransportSE(SOAP_ADDRESS);
+        Object response = null;
+
+
+        try
+        {
+            httpTransport.call(SOAP_ACTION_DetailClean, envelope);
+            response = envelope.getResponse();
+            SoapPrimitive response1 = (SoapPrimitive)envelope.getResponse();
+            String data = response1.toString();
+        }
+        catch (Exception exception)
+        {
+            response=exception.toString();
+        }
+        return response.toString();
+    }
+
+    public final String SOAP_ACTION_Maintenance = "http://tempuri.org/Maintenance";
+
+    public  final String OPERATION_NAME_Maintenance = "Maintenance";
+
+    public String Maintenance(String bedid,String problem,String picture,String username)
+    {
+        SoapObject request = new SoapObject(WSDL_TARGET_NAMESPACE,OPERATION_NAME_Maintenance);
+
+        request.addProperty("bedid",bedid);
+        request.addProperty("problem",problem);
+        request.addProperty("picture",picture);
+        request.addProperty("username",username);
+
+        SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
+                SoapEnvelope.VER11);
+        envelope.dotNet = true;
+        envelope.implicitTypes = true;
+        envelope.encodingStyle = SoapSerializationEnvelope.XSD;
+
+        envelope.setOutputSoapObject(request);
+
+        HttpTransportSE httpTransport = new HttpTransportSE(SOAP_ADDRESS);
+        Object response = null;
+
+
+        try
+        {
+            httpTransport.call(SOAP_ACTION_Maintenance, envelope);
+            response = envelope.getResponse();
+            SoapPrimitive response1 = (SoapPrimitive)envelope.getResponse();
+            String data = response1.toString();
+        }
+        catch (Exception exception)
+        {
+            response=exception.toString();
+        }
+        return response.toString();
+    }
 }

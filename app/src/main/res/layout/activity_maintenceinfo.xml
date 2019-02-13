@@ -39,19 +39,26 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/textview_border"
-                android:src="@drawable/camera" />
+                android:src="@drawable/camera"
+                android:id="@+id/img"/>
 
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:id="@+id/detail"
+                android:textSize="15sp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="34dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/textview_border"
                 android:gravity="center"
-                android:text="Photo"
+                android:text="Finish"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat"
                 android:textColor="@color/colorAquaDark"
-                android:textSize="14sp" />
+                android:textSize="14sp"
+                android:id="@+id/finish"/>
 
         </LinearLayout>
     </LinearLayout>
