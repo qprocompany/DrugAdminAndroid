@@ -25,7 +25,7 @@ public class ReaderActivity extends Activity {
     private Button scan_btn,nextBtn;
     public static String name;
     TextView toast1,toast2;
-    private ImageButton scanbtn1;
+    private ImageButton scanbtn1,scanbtn2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +33,12 @@ public class ReaderActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_reader);
-        scan_btn = (Button) findViewById(R.id.scan_btn);
         nextBtn = (Button) findViewById(R.id.nextbtn);
         toast1 = (TextView) findViewById(R.id.toast1);
         toast2 = (TextView) findViewById(R.id.toast2) ;
         scanbtn1 = (ImageButton) findViewById(R.id.scanbtn1);
+        scanbtn2 = (ImageButton) findViewById(R.id.scanbtn2);
+
 
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,6 +51,19 @@ public class ReaderActivity extends Activity {
 
 
         scanbtn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                IntentIntegrator integrator = new IntentIntegrator(activity);
+                integrator.setDesiredBarcodeFormats(IntentIntegrator.QR_CODE_TYPES);
+                integrator.setPrompt("Scan");
+                integrator.setCameraId(0);
+                integrator.setBeepEnabled(false);
+                integrator.setBarcodeImageEnabled(false);
+                integrator.initiateScan();
+            }
+        });
+
+        scanbtn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 IntentIntegrator integrator = new IntentIntegrator(activity);

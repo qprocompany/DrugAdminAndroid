@@ -46,18 +46,22 @@
             android:name=".DoseDetail"
             android:label="@string/title_activity_dose_detail"
             android:screenOrientation="portrait" />
-        <activity android:name=".maintenance"
+        <activity
+            android:name=".maintenance"
             android:screenOrientation="portrait" />
-        <activity android:name=".maintenceinfo"
+        <activity
+            android:name=".maintenceinfo"
             android:screenOrientation="portrait" />
-        <activity android:name=".DetailBedcleaning"
+        <activity
+            android:name=".DetailBedcleaning"
             android:screenOrientation="portrait" />
-        <activity android:name=".Bedcleaning"
+        <activity
+            android:name=".Bedcleaning"
             android:screenOrientation="portrait" />
-        <activity android:name=".Bedcleaningtimer"
-            android:screenOrientation="portrait" >
-
-        </activity>
+        <activity
+            android:name=".Bedcleaningtimer"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".Areacleaning"></activity>
     </application>
 
 </manifest>
