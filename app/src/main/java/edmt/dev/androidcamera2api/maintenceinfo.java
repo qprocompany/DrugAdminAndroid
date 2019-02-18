@@ -18,6 +18,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -33,7 +34,8 @@ import java.util.Date;
 public class maintenceinfo extends AppCompatActivity {
 
     EditText detail1;
-    TextView textView,finish;
+    TextView textView;
+    Button finish;
     ImageView img;
     String image1="";
     Uri file;
