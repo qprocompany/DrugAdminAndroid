@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PasienQR">
+
+    <SurfaceView
+        android:id="@+id/surfaceCamera"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
+
+    <info.androidhive.barcode.ScannerOverlay
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_alignTop="@+id/surfaceCamera"
+        android:layout_centerInParent="true"
+        android:background="#44000000"
+        app:line_color="#7323DC"
+        app:line_speed="6"
+        app:line_width="4"
+        app:square_height="250"
+        app:square_width="250" />
+
+    <TextView
+        android:id="@+id/detailQR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/qrTxt"
+        android:gravity="center"
+        android:text=" "
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/qrTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/surfaceCamera"
+        android:paddingTop="20dp"
+        android:text="Scan QR Gelang Pasien"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+
+    <Button
+        android:id="@+id/buttonConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/detailQR"
+        android:layout_marginTop="30dp"
+        android:text="Confirm" />
+
+</RelativeLayout>

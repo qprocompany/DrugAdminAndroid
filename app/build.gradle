@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "edmt.dev.androidcamera2api"
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -37,4 +37,10 @@ dependencies {
     implementation 'com.google.zxing:core:3.2.1'
     implementation 'com.journeyapps:zxing-android-embedded:3.2.0@aar'
     implementation 'com.pkmmte.view:circularimageview:1.1'
+
+    implementation 'info.androidhive:barcode-reader:1.1.5'
+
+    implementation 'com.google.android.gms:play-services-vision:15.0.0'
+
+    implementation 'com.google.android.gms:play-services-vision:11.0.2'
 }

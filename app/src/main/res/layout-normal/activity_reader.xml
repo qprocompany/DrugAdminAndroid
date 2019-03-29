@@ -5,80 +5,314 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="edmt.dev.androidcamera2api.ReaderActivity"
-    android:background="@drawable/android">
+   >
 
 
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="350dp"
-        android:layout_height="200dp"
-        android:layout_alignStart="@+id/scanbtn1"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="405dp"
-        android:text="TextView" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/nextbtn"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="0dp"
-        android:background="@color/ColorTransparent"
-        android:text="save" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/toast1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/nextbtn"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="466dp"
-        android:text="TextView"
-        android:visibility="invisible" />
+            <!--<LinearLayout-->
+                <!--android:id="@+id/barcodeLayer"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_margin="20dp"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:weightSum="2">-->
 
-    <TextView
-        android:id="@+id/toast2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignStart="@+id/toast1"
-        android:layout_marginBottom="59dp"
-        android:text="TextView"
-        android:visibility="invisible" />
+                <!--<ImageButton-->
+                    <!--android:id="@+id/scanbtn1"-->
+                    <!--android:layout_width="132dp"-->
+                    <!--android:layout_height="112dp"-->
+                    <!--android:layout_below="@+id/toast2"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:background="@color/colorWhite"-->
+                    <!--android:src="@drawable/qrcode1" />-->
 
-    <ImageButton
-        android:id="@+id/scanbtn1"
-        android:layout_width="132dp"
-        android:layout_height="112dp"
-        android:layout_below="@+id/toast2"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorWhite"
-        android:src="@drawable/qrcode1" />
+                <!--<ImageButton-->
+                    <!--android:id="@+id/scanbtn2"-->
+                    <!--android:layout_width="132dp"-->
+                    <!--android:layout_height="112dp"-->
+                    <!--android:layout_below="@+id/toast2"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:background="@color/colorWhite"-->
+                    <!--android:src="@drawable/qrcode1" />-->
+            <!--</LinearLayout>-->
 
-    <ImageButton
-        android:id="@+id/scanbtn2"
-        android:layout_width="132dp"
-        android:layout_height="112dp"
-        android:layout_below="@+id/toast2"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="220dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorWhite"
-        android:src="@drawable/qrcode1" />
+            <TextView
+                android:id="@+id/judul4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginVertical="10dp"
+                android:text="DATA PASIEN"
+                android:textAlignment="center"
+                android:textSize="30dp"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="350dp"
-        android:layout_height="200dp"
-        android:layout_alignStart="@+id/scanbtn1"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="-1dp"
-        android:layout_marginTop="211dp"
-        android:text="TextView" />
+            <LinearLayout
+                android:id="@+id/info1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/judul"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="5dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Nama:"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/namaPasien"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="MRN:"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/mrnPasien"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Alamat:"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/alamatPasien"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="No Telp:"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/noTlpPasien"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Diagnosa:"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/diagnosaPasien"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Prosedur:"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/prosedurPasien"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/judul"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginVertical="10dp"
+                android:text="MEDICAL RECORD"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/info1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/judul"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="5dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Alergi: "
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/alergiId"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Infeksi:"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/infeksiId"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Anti Alergi:"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/antiId"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:text="Masalah:"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/noTlpPasien"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textSize="20dp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/judul2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginVertical="10dp"
+                android:text="INFO OBAT"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/obat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="5dp"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/errorTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="5dp"
+                android:textAlignment="center"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/nextbtn"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginVertical="5dp"
+                android:background="@color/ColorTransparent" />
+        </LinearLayout>
+    </ScrollView>
 
 
 </RelativeLayout>

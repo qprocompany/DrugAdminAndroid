@@ -1,5 +1,6 @@
 package edmt.dev.androidcamera2api;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
@@ -10,12 +11,16 @@ import android.widget.LinearLayout;
 public class Menu extends AppCompatActivity {
 
     LinearLayout linearaccount, linearqrcode,linearphoto,linearbed;
+    private static final int MY_CAMERA_REQUEST_CODE = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        requestPermissions(new String[]{Manifest.permission.CAMERA},
+                MY_CAMERA_REQUEST_CODE);
 
 
         linearaccount = (LinearLayout) findViewById(R.id.linearaccount);
@@ -34,7 +39,7 @@ public class Menu extends AppCompatActivity {
         linearqrcode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Menu.this, ReaderActivity.class);
+                Intent intent = new Intent(Menu.this, PasienQR.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                 startActivity(intent);
             }

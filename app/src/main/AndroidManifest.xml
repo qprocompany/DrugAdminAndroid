@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.hardware.camera2.full" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -39,19 +38,18 @@
         <activity
             android:name=".Menu"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".ReaderETicketActivity"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".DoseDetail"
-            android:label="@string/title_activity_dose_detail"
-            android:screenOrientation="portrait" />
         <activity android:name=".maintenance" />
         <activity android:name=".maintenceinfo" />
-        <activity android:name=".Bedcleaningstart" />
         <activity android:name=".DetailBedcleaning" />
         <activity android:name=".Bedcleaning" />
-        <activity android:name=".Bedcleaningtimer"></activity>
+        <activity android:name=".Bedcleaningtimer" />
+
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="barcode" />
+
+        <activity android:name=".PasienQR" />
+        <activity android:name=".ObatQR"></activity>
     </application>
 
 </manifest>

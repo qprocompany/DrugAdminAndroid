@@ -90,12 +90,12 @@ public class Login extends Activity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             //Toast.makeText(Login.this,s,Toast.LENGTH_SHORT).show();
-            if(s.equals("True"))
+            //if(s.equals("True"))
                 OpenMainActivity();
-            else {
+            //else {
                 //Toast.makeText(Login.this, s, Toast.LENGTH_SHORT).show();
-                Toast.makeText(Login.this,"Your Username or Password is Wrong !!!",Toast.LENGTH_SHORT).show();
-            }
+             //   Toast.makeText(Login.this,"Your Username or Password is Wrong !!!",Toast.LENGTH_SHORT).show();
+            //}
         }
     }
 
