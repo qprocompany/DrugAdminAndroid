@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/updateDrug.iml" filepath="$PROJECT_DIR$/updateDrug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DrugAdminAndroid.iml" filepath="$PROJECT_DIR$/DrugAdminAndroid.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ksoap2-j2se-full-2.1.2/ksoap2-j2se-full-2.1.2.iml" filepath="$PROJECT_DIR$/ksoap2-j2se-full-2.1.2/ksoap2-j2se-full-2.1.2.iml" />
     </modules>
   </component>
 </project>

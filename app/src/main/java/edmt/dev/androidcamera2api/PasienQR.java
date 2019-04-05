@@ -30,7 +30,7 @@ public class PasienQR extends AppCompatActivity {
     Button buttonConfirm;
     private static final int MY_CAMERA_REQUEST_CODE = 100;
     String temp ="";
-    public static String tampungInfo = "";
+    public static String PasienQRData = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,6 @@ public class PasienQR extends AppCompatActivity {
 
         surfaceView = (SurfaceView) findViewById(R.id.surfaceCamera);
         detailQR = (TextView) findViewById(R.id.detailQR);
-        buttonConfirm = (Button) findViewById(R.id.buttonConfirm);
 
         barcodeDetector = new BarcodeDetector.Builder(this)
                 .setBarcodeFormats(Barcode.QR_CODE).build();
@@ -51,9 +50,6 @@ public class PasienQR extends AppCompatActivity {
 
         final boolean isEnabled = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                 == PackageManager.PERMISSION_GRANTED;
-
-
-
 
         surfaceView.getHolder().addCallback(new SurfaceHolder.Callback() {
             @Override
@@ -102,6 +98,14 @@ public class PasienQR extends AppCompatActivity {
 
                             detailQR.setText(qrCodes.valueAt(0).displayValue);
                             temp = qrCodes.valueAt(0).displayValue;
+
+                            if(temp.indexOf("#") < 5)
+                            {
+                                PasienQRData=temp;
+                                Intent confirmIntent = new Intent(PasienQR.this, ObatQR.class);
+                                startActivity(confirmIntent);
+                            }
+
                         }
                     });
 
@@ -109,21 +113,6 @@ public class PasienQR extends AppCompatActivity {
             }
 
 
-        });
-
-        buttonConfirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(temp.indexOf("#") < 0)
-                {
-                    ReaderActivity.PasienQRData=temp;
-                }
-                else{
-                    ReaderActivity.ObatQRData = temp;
-                }
-                Intent confirmIntent = new Intent(PasienQR.this, ObatQR.class);
-                startActivity(confirmIntent);
-            }
         });
 
 

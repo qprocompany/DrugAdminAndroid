@@ -29,6 +29,7 @@ public class ObatQR extends AppCompatActivity {
     BarcodeDetector barcodeDetector;
     Button buttonConfirm;
     String temp ="";
+    public static String ObatQRData = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,6 @@ public class ObatQR extends AppCompatActivity {
 
         surfaceView = (SurfaceView) findViewById(R.id.surfaceCamera);
         detailQR = (TextView) findViewById(R.id.detailQR);
-        buttonConfirm = (Button) findViewById(R.id.buttonConfirm);
 
         barcodeDetector = new BarcodeDetector.Builder(this)
                 .setBarcodeFormats(Barcode.QR_CODE).build();
@@ -100,6 +100,14 @@ public class ObatQR extends AppCompatActivity {
 
                             detailQR.setText(qrCodes.valueAt(0).displayValue);
                             temp = qrCodes.valueAt(0).displayValue;
+
+                            if(temp.indexOf("#")>0)
+                            {
+                                ObatQRData=temp;
+                                Intent confirmIntent = new Intent(ObatQR.this, ReaderActivity.class);
+                                startActivity(confirmIntent);
+                            }
+
                         }
                     });
 
@@ -109,19 +117,5 @@ public class ObatQR extends AppCompatActivity {
 
         });
 
-        buttonConfirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(temp.indexOf("#") < 0)
-                {
-                    ReaderActivity.PasienQRData=temp;
-                }
-                else{
-                    ReaderActivity.ObatQRData = temp;
-                }
-                Intent confirmIntent = new Intent(ObatQR.this, ReaderActivity.class);
-                startActivity(confirmIntent);
-            }
-        });
     }
 }
