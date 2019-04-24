@@ -2,6 +2,7 @@ package edmt.dev.androidcamera2api;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -35,27 +36,30 @@ public class maintenceinfo extends AppCompatActivity {
 
     EditText detail1;
     TextView textView;
-    Button finish;
+    TextView finish;
     ImageView img;
     String image1="";
     Uri file;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maintenceinfo);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         img = findViewById(R.id.img);
         detail1 = findViewById(R.id.detail);
         textView = findViewById(R.id.textView);
         textView.setText(maintenance.bedid);
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+        /*if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, new String[] { Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE }, 0);
-        }
+        }*/
 
         img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                takePicture(v);
+                //takePicture(v);
+                Toast.makeText(maintenceinfo.this,"Image",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -64,12 +68,13 @@ public class maintenceinfo extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String data = detail1.getText().toString();
-                new Detail(maintenance.bedid,data,image1,Login.username1).execute();
+                //new Detail(maintenance.bedid,data,image1,Login.username1).execute();
+                OpenMainActivity();
             }
         });
     }
 
-    @Override
+    /*@Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         if (requestCode == 0) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED
@@ -77,7 +82,6 @@ public class maintenceinfo extends AppCompatActivity {
             }
         }
     }
-
     public void takePicture(View view) {
         if(Build.VERSION.SDK_INT>=24){
             try{
@@ -92,7 +96,6 @@ public class maintenceinfo extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-
     }
 
     @Override
@@ -130,7 +133,7 @@ public class maintenceinfo extends AppCompatActivity {
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         return new File(mediaStorageDir.getPath() + File.separator +
                 "IMG_"+ timeStamp + ".jpg");
-    }
+    }*/
 
     class Detail extends AsyncTask<String, String, String>
     {

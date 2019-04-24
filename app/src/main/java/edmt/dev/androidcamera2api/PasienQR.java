@@ -2,6 +2,7 @@ package edmt.dev.androidcamera2api;
 
 import android.Manifest;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
@@ -36,7 +37,7 @@ public class PasienQR extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pasien_qr);
-
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         surfaceView = (SurfaceView) findViewById(R.id.surfaceCamera);
         detailQR = (TextView) findViewById(R.id.detailQR);
 
