@@ -278,11 +278,11 @@
 
             <Button
                 android:id="@+id/nextbtn"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
+                android:layout_width="80dp"
+                android:layout_height="35dp"
                 android:layout_gravity="center"
                 android:layout_marginVertical="5dp"
-                android:background="@color/ColorTransparent" />
+                android:background="@drawable/submit" />
         </LinearLayout>
     </ScrollView>
 

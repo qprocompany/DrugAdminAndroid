@@ -13,9 +13,9 @@ import android.widget.Toast;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
-public class Bedcleaningtimer extends AppCompatActivity {
+public class AreaCleaningTimer extends AppCompatActivity {
+
     private Chronometer chronometer;
     private long pauseOffset;
     private boolean running;
@@ -24,8 +24,7 @@ public class Bedcleaningtimer extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bedcleaningtimer);
-
+        setContentView(R.layout.activity_area_cleaning_timer);
         button = (Button) findViewById(R.id.next);
 
         chronometer = findViewById(R.id.chronometer);
@@ -45,7 +44,7 @@ public class Bedcleaningtimer extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openDetail();
+
             }
         });
     }
@@ -57,12 +56,10 @@ public class Bedcleaningtimer extends AppCompatActivity {
             running = true;
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd, HH:mm:ss");
             String date = df.format(Calendar.getInstance().getTime());
-            new Start(date,Bedcleaning.bedid).execute();
+            new Start(date,"").execute();
         }
 
     }
-
-
 
     public void pauseChronometer(View v) {
         if (running) {
@@ -73,7 +70,7 @@ public class Bedcleaningtimer extends AppCompatActivity {
             pauseOffset = 0;
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd, HH:mm:ss");
             String date = df.format(Calendar.getInstance().getTime());
-            new Finish(date,Bedcleaning.bedid).execute();
+            new Finish(date,"").execute();
         }
     }
 
@@ -84,48 +81,41 @@ public class Bedcleaningtimer extends AppCompatActivity {
 
     class Start extends AsyncTask<String, String, String>
     {
-        private String datetime, bedid;
-        public Start(String datetime, String bedid) {
+        private String datetime, areaid;
+        public Start(String datetime, String areaid) {
             this.datetime = datetime;
-            this.bedid = bedid;
+            this.areaid = areaid;
         }
         @Override
         protected String doInBackground(String... strings) {
             CallSoap cs = new CallSoap();
-            String data = cs.StartCleaning(Login.username1,datetime,bedid);
+            String data = cs.StartCleaning(Login.username1,datetime,areaid);
             return data;
         }
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            Toast.makeText(Bedcleaningtimer.this,s,Toast.LENGTH_SHORT).show();
+            Toast.makeText(AreaCleaningTimer.this,s,Toast.LENGTH_SHORT).show();
         }
     }
 
     class Finish extends AsyncTask<String, String, String>
     {
-        private String datetime, bedid;
-        public Finish(String datetime, String bedid) {
+        private String datetime, areaid;
+        public Finish(String datetime, String areaid) {
             this.datetime = datetime;
-            this.bedid = bedid;
+            this.areaid = areaid;
         }
         @Override
         protected String doInBackground(String... strings) {
             CallSoap cs = new CallSoap();
-            String data = cs.FinishCleaning(Login.username1 ,datetime,bedid);
+            String data = cs.FinishCleaning(Login.username1 ,datetime,areaid);
             return data;
         }
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            Toast.makeText(Bedcleaningtimer.this,s,Toast.LENGTH_SHORT).show();
+            Toast.makeText(AreaCleaningTimer.this,s,Toast.LENGTH_SHORT).show();
         }
     }
-
-    public void openDetail(){
-        Intent intent = new Intent(this, DetailBedcleaning.class);
-        startActivity(intent);
-    }
-
-
 }

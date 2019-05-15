@@ -43,13 +43,16 @@ public class DetailBedcleaning extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            Toast.makeText(DetailBedcleaning.this,s,Toast.LENGTH_SHORT).show();
-            bedid1.setText(Bedcleaning.bedid);
-            String data[] = s.split("_");
-            String temp[] = data[1].split(" ");
-            tgl.setText(data[1].substring(1,data[1].indexOf(" ")));
-            start.setText(data[1].substring(data[1].indexOf(" ")));
-            stop.setText(data[2].substring(data[1].indexOf(" ")));
+            try {
+                bedid1.setText(Bedcleaning.bedid);
+                String data[] = s.split("_");
+                String temp[] = data[1].split(" ");
+                tgl.setText(data[1].substring(1, data[1].indexOf(" ")));
+                start.setText(data[1].substring(data[1].indexOf(" ")));
+                stop.setText(data[2].substring(data[1].indexOf(" ")));
+            }catch (Exception e){
+                Toast.makeText(DetailBedcleaning.this,e.toString(),Toast.LENGTH_SHORT).show();
+            }
         }
     }
 

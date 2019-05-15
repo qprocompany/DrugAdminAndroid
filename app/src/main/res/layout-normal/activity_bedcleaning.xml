@@ -7,62 +7,43 @@
     android:background="@drawable/android"
     tools:context=".Bedcleaning">
 
-    <LinearLayout
-        android:layout_width="360dp"
-        android:layout_height="650dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="50dp"
-        android:background="@drawable/btn_scan"></LinearLayout>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+    <SurfaceView
+        android:id="@+id/surfaceCamera"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="121dp"
-        android:text="QRCode Scanner"
-        android:textSize="30dp" />
+        android:layout_marginTop="50dp" />
 
-    <Button
-        android:id="@+id/nextbtn"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="158dp"
-        android:background="@color/ColorTransparent"
-        android:text="Next" />
-
-    <TextView
-        android:id="@+id/toast1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/nextbtn"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="84dp"
-        android:text="TextView"
-        android:visibility="invisible" />
-
-    <TextView
-        android:id="@+id/toast2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignStart="@+id/toast1"
-        android:layout_marginBottom="59dp"
-        android:text="TextView"
-        android:visibility="invisible" />
-
-    <ImageButton
-        android:id="@+id/scanbtn1"
-        android:layout_width="132dp"
-        android:layout_height="112dp"
+    <info.androidhive.barcode.ScannerOverlay
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_alignTop="@+id/surfaceCamera"
         android:layout_centerInParent="true"
-        android:layout_marginBottom="15dp"
-        android:background="@color/colorWhite"
-        android:src="@drawable/qrcode1" />
+        android:background="#44000000"
+        app:line_color="#7323DC"
+        app:line_speed="6"
+        app:line_width="4"
+        app:square_height="250"
+        app:square_width="250" />
+
+    <TextView
+        android:id="@+id/detailQR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/qrTxt"
+        android:gravity="center"
+        android:text=" "
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/qrTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/surfaceCamera"
+        android:paddingTop="20dp"
+        android:text="Scan QR Lokasi"
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

@@ -50,9 +50,11 @@ public class Login extends Activity {
             @Override
             public void onClick(View view) {
                 //Toast.makeText(Login.this,username.getText().toString(),Toast.LENGTH_SHORT).show();
-                new loginapp(username.getText().toString(),password.getText().toString()).execute();
+                OpenMainActivity();
+//                new loginapp(username.getText().toString(),password.getText().toString()).execute();
             }
         });
+
         button = (Button) findViewById(R.id.RegisterApp);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,12 +92,12 @@ public class Login extends Activity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             //Toast.makeText(Login.this,s,Toast.LENGTH_SHORT).show();
-            //if(s.equals("True"))
+            if(s.equals("True"))
                 OpenMainActivity();
-            //else {
-                //Toast.makeText(Login.this, s, Toast.LENGTH_SHORT).show();
-             //   Toast.makeText(Login.this,"Your Username or Password is Wrong !!!",Toast.LENGTH_SHORT).show();
-            //}
+            else {
+                Toast.makeText(Login.this, s, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Login.this,"Your Username or Password is Wrong !!!",Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
